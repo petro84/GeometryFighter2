@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		DCC648CE20F983800012D27A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC648CD20F983800012D27A /* AppDelegate.swift */; };
-		DCC648D020F983800012D27A /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = DCC648CF20F983800012D27A /* art.scnassets */; };
 		DCC648D220F983800012D27A /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC648D120F983800012D27A /* GameViewController.swift */; };
 		DCC648D520F983800012D27A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCC648D320F983800012D27A /* Main.storyboard */; };
 		DCC648D720F983810012D27A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCC648D620F983810012D27A /* Assets.xcassets */; };
@@ -18,7 +17,6 @@
 /* Begin PBXFileReference section */
 		DCC648CA20F983800012D27A /* GeometryFighter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeometryFighter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCC648CD20F983800012D27A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DCC648CF20F983800012D27A /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		DCC648D120F983800012D27A /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		DCC648D420F983800012D27A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DCC648D620F983810012D27A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -57,7 +55,6 @@
 			isa = PBXGroup;
 			children = (
 				DCC648CD20F983800012D27A /* AppDelegate.swift */,
-				DCC648CF20F983800012D27A /* art.scnassets */,
 				DCC648D120F983800012D27A /* GameViewController.swift */,
 				DCC648D320F983800012D27A /* Main.storyboard */,
 				DCC648D620F983810012D27A /* Assets.xcassets */,
@@ -125,7 +122,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCC648D020F983800012D27A /* art.scnassets in Resources */,
 				DCC648DA20F983810012D27A /* LaunchScreen.storyboard in Resources */,
 				DCC648D720F983810012D27A /* Assets.xcassets in Resources */,
 				DCC648D520F983800012D27A /* Main.storyboard in Resources */,
