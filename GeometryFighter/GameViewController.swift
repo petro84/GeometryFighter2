@@ -6,6 +6,7 @@ class GameViewController: UIViewController {
     var scnView: SCNView!
     var scnScene: SCNScene!
     var cameraNode: SCNNode!
+    var spawnTime: TimeInterval = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -13,7 +14,6 @@ class GameViewController: UIViewController {
         setupView()
         setupScene()
         setupCamera()
-        spawnShape()
     }
     
     override var shouldAutorotate: Bool {
@@ -33,6 +33,8 @@ class GameViewController: UIViewController {
         scnView.showsStatistics = true
         scnView.allowsCameraControl = true
         scnView.autoenablesDefaultLighting = true
+        scnView.delegate = self
+        scnView.isPlaying = true
     }
     
     func setupScene() {
@@ -54,7 +56,7 @@ class GameViewController: UIViewController {
         
         switch ShapeType.random() {
         case .cone:
-            geometry = SCNCone(topRadius: 0.25, bottomRadius: 0.5, height: 1.0)
+            geometry = SCNCone(topRadius: 0.0, bottomRadius: 0.5, height: 1.0)
         case .capsule:
             geometry = SCNCapsule(capRadius: 0.3, height: 2.5)
         case .cylinder:
@@ -84,5 +86,25 @@ class GameViewController: UIViewController {
         geometryNode.physicsBody?.applyForce(force, at: position, asImpulse: true)
         
         scnScene.rootNode.addChildNode(geometryNode)
+    }
+    
+    func clearScene() {
+        for node in scnScene.rootNode.childNodes {
+            if node.presentation.position.y < -2 {
+                node.removeFromParentNode()
+            }
+        }
+    }
+}
+
+extension GameViewController: SCNSceneRendererDelegate {
+    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+        if time > spawnTime {
+            spawnShape()
+            
+            spawnTime = time + TimeInterval(Float.random(min: 0.2, max: 1.5))
+        }
+        
+        clearScene()
     }
 }
